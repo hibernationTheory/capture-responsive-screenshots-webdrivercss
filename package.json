@@ -1,7 +1,7 @@
 {
   "name": "capture-responsive-screenshots-webdrivercss",
   "version": "0.0.0",
-  "description": "Captures screenshots at different breakpoints from given URLs as defined in a config file. Uses WebdriverCSS.",
+  "description": "Captures screenshots at different breakpoints from given URLs as defined in a config file. Also checks for visual regressions. Uses WebdriverCSS.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
