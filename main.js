@@ -10,10 +10,6 @@ function main(configFile, dataFile) {
     var sanitize = require("sanitize-filename")
     var webdriver = require('webdriverio');
 
-    // init Webdriver
-    var options = {desiredCapabilities:{browserName: 'safari'}}
-    var client = webdriver.remote(options)
-
     // read in data files
     var configFileStr = fs.readFileSync(configFile).toString();
     var configFileData = JSON.parse(configFileStr);
@@ -26,6 +22,11 @@ function main(configFile, dataFile) {
     var breakpoints = configFileData.breakpoints;
     var imageSaveDir = configFileData.imageSaveDir || './output';
     var misMatchTolerance = configFileData.misMatchTolerance || 0.05;
+    var browserName = configFileData.browserName || 'safari';
+
+    // init Webdriver
+    var options = {desiredCapabilities:{"browserName": browserName}}
+    var client = webdriver.remote(options)
 
     // init WebdriverCSS
     require('webdrivercss').init(client, {

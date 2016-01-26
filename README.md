@@ -10,7 +10,7 @@ While looking into Webdriver.io to capture screenshots, I have noticed it falls 
 
 ## How to use it?
 
-Require the package. Invoke it by pointing to two data files. One should contain the url data the tool should capture screenshots from, the other one is a config files that configures various aspect of the capture and regression testing progress (tolerance, output dir, etc...)
+Require the package. Invoke it by pointing to two json files. One should contain the url data the tool should capture screenshots from, the other one is a config files that configures various aspect of the capture and regression testing progress (tolerance, output dir, etc...)
 Ex: captureScreenshots('./config.json', './data.json');
 
 ### Example Config File
@@ -18,7 +18,8 @@ Ex: captureScreenshots('./config.json', './data.json');
 {
 	"breakpoints":[320, 768, 1200],
 	"imageSaveDir":"./output", // default
-	"misMatchTolerance":0.05 // default
+	"misMatchTolerance":0.05, // default
+	"browserName":'safari' //default
 }
 ```
 
@@ -38,3 +39,5 @@ Ex: captureScreenshots('./config.json', './data.json');
 	]
 }
 ```
+
+### TO-DO
